@@ -1,4 +1,4 @@
-\# Terraform AKS + Datadog Observability Mini-Lab
+\# Terraform AKS + Datadog Observability Lab
 
 
 
