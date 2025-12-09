@@ -46,7 +46,7 @@ The goal of this project is to practice real-world cloud engineering workflows:
 
 
 
-3\. The Datadog \*\*Agent\*\* is deployed into the cluster (via Helm or Kubernetes manifests), which:
+3\. The Datadog \*\*Agent\*\* is deployed into the AKS cluster (via Helm or Kubernetes manifests), which:
 
 &nbsp;  - Scrapes cluster + node metrics
 
