@@ -1,0 +1,13 @@
+location             = "eastus"
+resource_group_name  = "rg-tf-aks-datadog"
+aks_cluster_name     = "aks-tf-datadog-demo"
+node_count           = 1
+node_vm_size         = "Standard_B2s"
+
+# Datadog configuration
+datadog_api_key      = "REPLACE_WITH_YOUR_DATADOG_API_KEY"
+datadog_site         = "us5.datadoghq.com"
+datadog_cluster_name = "aks-tf-datadog-demo"
+
+# Azure subscription
+subscription_id      = "REPLACE_WITH_YOUR_SUBSCRIPTION_ID"

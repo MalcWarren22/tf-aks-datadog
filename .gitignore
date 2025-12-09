@@ -1,0 +1,52 @@
+##################################
+# Terraform
+##################################
+
+# Local .terraform directories
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform variable files (often contain secrets)
+terraform.tfvars
+*.auto.tfvars
+
+##################################
+# Sensitive / local files
+##################################
+
+# Environment variables
+.env
+.env.*
+
+# Datadog secrets (if any local files)
+*datadog*.key
+*datadog*.env
+
+##################################
+# Editor / OS noise
+##################################
+
+# VS Code
+.vscode/
+
+# IntelliJ / JetBrains
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+##################################
+# Logs
+##################################
+*.log
