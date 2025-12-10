@@ -1,124 +1,85 @@
-\# Terraform AKS + Datadog Observability Lab
+# Terraform AKS + Datadog Observability Lab
 
+**Infrastructure as Code • Managed Kubernetes • Observability**
 
+This repository contains a hands-on Azure observability platform built using **Terraform** to provision **Azure Kubernetes Service (AKS)** and integrate **Datadog** for full cluster visibility.
 
-This repo contains a hands-on lab where I use \*\*Terraform\*\* to provision an \*\*Azure Kubernetes Service (AKS)\*\* cluster and then hook it up to \*\*Datadog\*\* for Kubernetes observability.
-
-
-
-The goal of this project is to practice real-world cloud engineering workflows:
-
-
-
-\- Infrastructure as Code with Terraform  
-
-\- Managed Kubernetes on Azure (AKS)  
-
-\- Container / node-level monitoring with Datadog  
-
-\- Basic CI/CD readiness (infra as code, repeatable deploys)
-
-
+The lab focuses on applying real-world cloud engineering patterns and repeatable infrastructure deployment workflows.
 
 ---
 
+## Infrastructure Overview
 
-
-\## Architecture Overview
-
-
-
-\*\*High-level flow:\*\*
-
-
-
-1\. Terraform uses the Azure provider to create:
-
-&nbsp;  - Resource group  
-
-&nbsp;  - AKS cluster (control plane + node pool)  
-
-&nbsp;  - Supporting resources (as defined in the code)
-
-
-
-2\. Once the cluster is created, I connect to it using `az` + `kubectl`.
-
-
-
-3\. The Datadog \*\*Agent\*\* is deployed into the AKS cluster (via Helm or Kubernetes manifests), which:
-
-&nbsp;  - Scrapes cluster + node metrics
-
-&nbsp;  - Collects container logs
-
-&nbsp;  - Sends data to my Datadog account via an API key
-
-
-
-4\. From the Datadog UI I can see:
-
-&nbsp;  - Cluster overview  
-
-&nbsp;  - Nodes / pods status  
-
-&nbsp;  - Metrics, logs, and events from AKS
-
-
+The Azure environment implements a **managed Kubernetes observability platform** with centralized monitoring and metrics collection.
 
 ---
 
+## High-Level Flow
 
+1. **Terraform provisioning**
+   - Resource group
+   - AKS cluster (control plane + node pool)
+   - Supporting Azure resources (as defined in code)
 
-\## Tech Stack
+2. **Cluster access**
+   - Authentication and access configured using `az` and `kubectl`
 
+3. **Datadog integration**
+   - Datadog Agent deployed into AKS (Helm or Kubernetes manifests)
+   - Metrics, logs, and events collected from cluster and nodes
+   - Telemetry securely forwarded to Datadog via API key
 
-
-\- \*\*Cloud:\*\* Microsoft Azure  
-
-\- \*\*Kubernetes:\*\* Azure Kubernetes Service (AKS)  
-
-\- \*\*IaC:\*\* Terraform  
-
-\- \*\*Observability:\*\* Datadog (Kubernetes Agent)  
-
-\- \*\*CLI Tools:\*\* Azure CLI, kubectl, Helm (if used)
-
-
+4. **Observability validation**
+   - Cluster and node visibility available in Datadog UI
+   - Pod status, metrics, logs, and events monitored centrally
 
 ---
 
+## Platform Components
 
+### Azure
+- Azure Kubernetes Service (AKS)
+- Resource Group
+- Managed control plane and worker nodes
 
-\## Prerequisites
+### Observability
+- Datadog Kubernetes Agent
+- Cluster metrics and events
+- Container and node-level logging
 
+### Infrastructure as Code
+- Terraform Azure Provider
+- Repeatable infrastructure deployments
 
+---
 
-\- Azure subscription
+## Tech Stack
 
-\- Datadog account + API key
+- **Cloud:** Microsoft Azure  
+- **Kubernetes:** Azure Kubernetes Service (AKS)  
+- **Infrastructure as Code:** Terraform  
+- **Observability:** Datadog (Kubernetes Agent)  
+- **CLI Tools:** Azure CLI, kubectl, Helm
 
-\- Installed locally:
+---
 
-&nbsp; - \[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+## Prerequisites
 
-&nbsp; - \[Terraform](https://developer.hashicorp.com/terraform/install)
+- Active Azure subscription  
+- Datadog account with API key  
 
-&nbsp; - \[kubectl](https://kubernetes.io/docs/tasks/tools/)
+### Local Tooling
+- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+- [Terraform](https://developer.hashicorp.com/terraform/install)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [Helm](https://helm.sh/docs/intro/install/) (if using Helm)
 
-&nbsp; - \[Helm](https://helm.sh/docs/intro/install/) (if using Helm for Datadog)
-
-
-
-You should also be logged in to Azure:
-
-
+Log in to Azure before deploying:
 
 ```bash
-
 az login
+az account set --subscription "<YOUR_SUBSCRIPTION_ID>"
 
-az account set --subscription "<YOUR\_SUBSCRIPTION\_ID>"
 
 
 
