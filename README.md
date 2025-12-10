@@ -72,7 +72,7 @@ The Azure environment implements a **managed Kubernetes observability platform**
 - [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 - [Terraform](https://developer.hashicorp.com/terraform/install)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [Helm](https://helm.sh/docs/intro/install/) (if using Helm)
+- [Helm](https://helm.sh/docs/intro/install/)
 
 Log in to Azure before deploying:
 
